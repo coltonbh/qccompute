@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [unreleased]
 
+## [0.13.2] - 2026-07-15
+
 ### Fixed
 
 - CREST parser failures now preserve partial structured data from `qccodec`, allowing failed calculations to return an appropriate `ProgramOutput` instead of losing parsed metadata.
@@ -441,7 +443,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Created adapter for TeraChem.
 - Exposed general purpose computing for any subprocess with `FileAdaptor`
 
-[unreleased]: https://github.com/coltonbh/qccompute/compare/0.13.1...HEAD
+[unreleased]: https://github.com/coltonbh/qccompute/compare/0.13.2...HEAD
+[0.13.2]: https://github.com/coltonbh/qccompute/releases/tag/0.13.2
 [0.13.1]: https://github.com/coltonbh/qccompute/releases/tag/0.13.1
 [0.13.0]: https://github.com/coltonbh/qccompute/releases/tag/0.13.0
 [0.12.2]: https://github.com/coltonbh/qcio/releases/tag/0.12.2
