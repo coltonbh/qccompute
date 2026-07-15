@@ -127,6 +127,7 @@ class CRESTAdapter(
             raise ExternalProgramError(
                 program="qccodec",
                 message="Failed to parse CREST output.",
+                data=getattr(e, "data", None),
                 logs=stdout,
                 original_exception=e,
             ) from e

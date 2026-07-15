@@ -1015,16 +1015,16 @@ wheels = [
 
 [[package]]
 name = "qccodec"
-version = "0.10.0"
+version = "0.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "qcconst" },
     { name = "qcdata" },
     { name = "tomli-w" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/55/a0/f2fe20494da9c6cccca8c2b83f4be776630a77af69f0c8ac0c8163a8c8c3/qccodec-0.10.0.tar.gz", hash = "sha256:5bb28802e6594e646710b63ab3c836d6a0d625c733baa65f9524f836a5b1b48b", size = 518027 }
+sdist = { url = "https://files.pythonhosted.org/packages/7a/10/9191c5a56251c8798a94cf2140ec1d1e03b22d1d151a0edcb2826ed99872/qccodec-0.11.0.tar.gz", hash = "sha256:3a4081a6aed3f343eabdad18c0e52e2895f765d99d26b40b9cae3ed2b3dba26d", size = 519057 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d8/aa/d95279e7a0edcea470ee3ccf964a089c7a96b0d266a0730a3504e99a7d93/qccodec-0.10.0-py3-none-any.whl", hash = "sha256:ab2e0bf8bbc779b0ce027d6b8fa9ccc269bcd037c6f49b47d38c21fedd4415e4", size = 27643 },
+    { url = "https://files.pythonhosted.org/packages/92/8c/e4588ae40138a167a9869a2646109d9d792bcdab006c309c846565b351e2/qccodec-0.11.0-py3-none-any.whl", hash = "sha256:e4c6a2e3e30b2d68e5263ee7c01e0690d928244b240ae3294dc14dce5a82c486", size = 28050 },
 ]
 
 [[package]]
@@ -1077,8 +1077,8 @@ docs = [
 requires-dist = [
     { name = "geometric", marker = "extra == 'all'", specifier = ">=1.0.1,<2" },
     { name = "geometric", marker = "extra == 'geometric'", specifier = ">=1.0.1,<2" },
-    { name = "qccodec", specifier = ">=0.10.0" },
-    { name = "qcdata", specifier = ">=0.17.0" },
+    { name = "qccodec", specifier = ">=0.11.0" },
+    { name = "qcdata", specifier = ">=0.18.0" },
     { name = "qcelemental", marker = "extra == 'all'", specifier = ">=0.26.0,<0.27" },
     { name = "qcelemental", marker = "extra == 'qcengine'", specifier = ">=0.26.0,<0.27" },
     { name = "qcengine", marker = "extra == 'all'", specifier = ">=0.27.0,<0.28" },
@@ -1119,7 +1119,7 @@ wheels = [
 
 [[package]]
 name = "qcdata"
-version = "0.17.0"
+version = "0.18.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "eval-type-backport" },
@@ -1130,9 +1130,9 @@ dependencies = [
     { name = "toml" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/10/2b/191a7997d128c579dc365e876d66dacc05aded15a417b796afcfc7946350/qcdata-0.17.0.tar.gz", hash = "sha256:df05ca67b9a83bb3f6155926f4825d4736e87cb3460abe22116f8b70bcd01eba", size = 1479911 }
+sdist = { url = "https://files.pythonhosted.org/packages/95/2d/29e0b4a6765d3f36f32d1f2b5cc96e7922dac1a472de1d79c2ddc8aadde0/qcdata-0.18.0.tar.gz", hash = "sha256:1d5fb4992dda3266a5bc86300c437cdeca50fca947f9d1c19052b8b96fc3f64e", size = 1488640 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3b/5f/8084b103f8ccecb0fa2437a862c01d1c6c8744b70daa607bc8cd6f31e27f/qcdata-0.17.0-py3-none-any.whl", hash = "sha256:515bf0d5fb6e3c048510301a3a8349ffc16156a30caf3bdecebe3d5c88942562", size = 37928 },
+    { url = "https://files.pythonhosted.org/packages/22/fb/482ddfe49bf0c3bedb58108a34fb9ffdce8241f6e46a13307c5e81fb0601/qcdata-0.18.0-py3-none-any.whl", hash = "sha256:9ea92cfe985b2bb132b9ed8c35e41b9810d6eaf60d63b6186367b588ee8d0c39", size = 38159 },
 ]
 
 [[package]]

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [unreleased]
 
+### Fixed
+
+- CREST parser failures now preserve partial structured data from `qccodec`, allowing failed calculations to return an appropriate `ProgramOutput` instead of losing parsed metadata.
+
 ## [0.13.1] - 2026-04-07
 
 ### Fixed
