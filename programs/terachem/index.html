@@ -1198,7 +1198,8 @@
 
             <details class="quote">
               <summary>Source code in <code>src/qccompute/adapters/terachem.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
+<span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
@@ -1217,8 +1218,7 @@
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">program_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stdout</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">program_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stdout</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the program version.</span>
 
 <span class="sd">    Args:</span>
@@ -1343,7 +1343,8 @@ update_func.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/qccompute/adapters/terachem.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 52</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 51</span>
+<span class="normal"> 52</span>
 <span class="normal"> 53</span>
 <span class="normal"> 54</span>
 <span class="normal"> 55</span>
@@ -1401,8 +1402,7 @@ update_func.</p>
 <span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compute_data</span><span class="p">(</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compute_data</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">input_data</span><span class="p">:</span> <span class="n">ProgramInput</span><span class="p">,</span>
     <span class="n">update_func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1438,11 +1438,11 @@ update_func.</p>
 
     <span class="c1"># Get the scratch output directory</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
-    <span class="c1"># TeraChem creates a directory named scr.&lt;xyz_filename&gt; in the current working</span>
-    <span class="n">scr_dir</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">parent</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;scr.*&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="c1"># TeraChem creates a directory named scr&lt;xyz_filename&gt; in the current working</span>
+    <span class="n">scr_dir</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">parent</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;scr*&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">scr_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">ExternalProgramError</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;TeraChem did not create a &#39;scr.&#39; directory in </span><span class="si">{</span><span class="n">parent</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;TeraChem did not create a &#39;scr&#39; directory in </span><span class="si">{</span><span class="n">parent</span><span class="si">}</span><span class="s2">.&quot;</span>
         <span class="p">)</span>
 
     <span class="c1"># Parse output</span>
@@ -1485,7 +1485,8 @@ update_func.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/qccompute/adapters/terachem.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">112</span>
+<span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
@@ -1501,15 +1502,20 @@ update_func.</p>
 <span class="normal">126</span>
 <span class="normal">127</span>
 <span class="normal">128</span>
-<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">collect_wfn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">]:</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">collect_wfn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Append wavefunction data to the output.&quot;&quot;&quot;</span>
 
     <span class="c1"># Naming conventions from TeraChem uses xyz filename as scratch dir postfix</span>
-    <span class="n">scr_postfix</span> <span class="o">=</span> <span class="n">XYZ_FILENAME</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
+    <span class="n">scr_dir</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;scr*&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">scr_dir</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">AdapterError</span><span class="p">(</span>
+            <span class="s2">&quot;No scratch directory found for wavefunction collection.&quot;</span>
+        <span class="p">)</span>
     <span class="c1"># Wavefunction filenames</span>
     <span class="n">wfn_filenames</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;c0&quot;</span><span class="p">,</span> <span class="s2">&quot;ca0&quot;</span><span class="p">,</span> <span class="s2">&quot;cb0&quot;</span><span class="p">)</span>
-    <span class="n">wfn_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;scr.</span><span class="si">{</span><span class="n">scr_postfix</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">fn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">wfn_filenames</span><span class="p">]</span>
+    <span class="n">wfn_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">scr_dir</span> <span class="o">/</span> <span class="n">fn</span> <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">wfn_filenames</span><span class="p">]</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">wfn_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="k">for</span> <span class="n">wfn_path</span> <span class="ow">in</span> <span class="n">wfn_paths</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">AdapterError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No wavefunction files found in </span><span class="si">{</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -1607,9 +1613,7 @@ update_func.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/qccompute/adapters/terachem.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
@@ -1648,8 +1652,7 @@ update_func.</p>
 <span class="normal">169</span>
 <span class="normal">170</span>
 <span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">propagate_wfn</span><span class="p">(</span>
+<span class="normal">172</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">propagate_wfn</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">output</span><span class="p">:</span> <span class="n">ProgramOutput</span><span class="p">[</span><span class="n">ProgramInput</span><span class="p">,</span> <span class="n">SinglePointData</span><span class="p">],</span>
     <span class="n">program_input</span><span class="p">:</span> <span class="n">ProgramInput</span><span class="p">,</span>
@@ -1664,18 +1667,15 @@ update_func.</p>
 <span class="sd">        None. Modifies the program_input object in place.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="c1"># Naming conventions from TeraChem uses xyz filename as scratch dir postfix</span>
-    <span class="n">scr_postfix</span> <span class="o">=</span> <span class="n">XYZ_FILENAME</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
     <span class="c1"># Wavefunction filenames</span>
-    <span class="n">c0</span><span class="p">,</span> <span class="n">ca0</span><span class="p">,</span> <span class="n">cb0</span> <span class="o">=</span> <span class="s2">&quot;c0&quot;</span><span class="p">,</span> <span class="s2">&quot;ca0&quot;</span><span class="p">,</span> <span class="s2">&quot;cb0&quot;</span>
+    <span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;c0&quot;</span><span class="p">,</span> <span class="s2">&quot;ca0&quot;</span><span class="p">,</span> <span class="s2">&quot;cb0&quot;</span><span class="p">)</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">suffix</span> <span class="ow">in</span> <span class="n">suffixes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">suffix</span><span class="p">):</span>
+                <span class="n">matches</span><span class="p">[</span><span class="n">suffix</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
 
-    <span class="n">files</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">files</span>
-    <span class="n">c0_bytes</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;scr.</span><span class="si">{</span><span class="n">scr_postfix</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">c0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">ca0_bytes</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;scr.</span><span class="si">{</span><span class="n">scr_postfix</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">ca0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">cb0_bytes</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;scr.</span><span class="si">{</span><span class="n">scr_postfix</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">cb0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">c0_bytes</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ca0_bytes</span> <span class="ow">and</span> <span class="n">cb0_bytes</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;c0&quot;</span> <span class="ow">in</span> <span class="n">matches</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="s2">&quot;ca0&quot;</span> <span class="ow">in</span> <span class="n">matches</span> <span class="ow">and</span> <span class="s2">&quot;cb0&quot;</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">AdapterInputError</span><span class="p">(</span>
             <span class="n">program</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span>
             <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Could not find c0 or ca/b0 files in output.&quot;</span><span class="p">,</span>
@@ -1683,15 +1683,15 @@ update_func.</p>
 
     <span class="c1"># Load wavefunction data onto ProgramInput object</span>
 
-    <span class="k">if</span> <span class="n">c0_bytes</span><span class="p">:</span>
-        <span class="n">program_input</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="n">c0</span><span class="p">]</span> <span class="o">=</span> <span class="n">c0_bytes</span>
-        <span class="n">program_input</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">&quot;guess&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c0</span>
+    <span class="k">if</span> <span class="s2">&quot;c0&quot;</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="n">program_input</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s2">&quot;c0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="s2">&quot;c0&quot;</span><span class="p">]</span>
+        <span class="n">program_input</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">&quot;guess&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;c0&quot;</span>
 
     <span class="k">else</span><span class="p">:</span>  <span class="c1"># ca0_bytes and cb0_bytes</span>
-        <span class="k">assert</span> <span class="n">ca0_bytes</span> <span class="ow">and</span> <span class="n">cb0_bytes</span>  <span class="c1"># for mypy</span>
-        <span class="n">program_input</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="n">ca0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ca0_bytes</span>
-        <span class="n">program_input</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="n">cb0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cb0_bytes</span>
-        <span class="n">program_input</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">&quot;guess&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ca0</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">cb0</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">assert</span> <span class="s2">&quot;ca0&quot;</span> <span class="ow">in</span> <span class="n">matches</span> <span class="ow">and</span> <span class="s2">&quot;cb0&quot;</span> <span class="ow">in</span> <span class="n">matches</span>  <span class="c1"># for mypy</span>
+        <span class="n">program_input</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s2">&quot;ca0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="s2">&quot;ca0&quot;</span><span class="p">]</span>
+        <span class="n">program_input</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s2">&quot;cb0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="s2">&quot;cb0&quot;</span><span class="p">]</span>
+        <span class="n">program_input</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">&quot;guess&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ca0 cb0&quot;</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>

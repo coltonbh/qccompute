@@ -1293,7 +1293,8 @@ False since rotamers are usually not of interest and there will be many.</p>
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
-<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compute_data</span><span class="p">(</span>
+<span class="normal">134</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compute_data</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">input_data</span><span class="p">:</span> <span class="n">ProgramInput</span><span class="p">,</span>
     <span class="n">update_func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1350,6 +1351,7 @@ False since rotamers are usually not of interest and there will be many.</p>
         <span class="k">raise</span> <span class="n">ExternalProgramError</span><span class="p">(</span>
             <span class="n">program</span><span class="o">=</span><span class="s2">&quot;qccodec&quot;</span><span class="p">,</span>
             <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Failed to parse CREST output.&quot;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
             <span class="n">logs</span><span class="o">=</span><span class="n">stdout</span><span class="p">,</span>
             <span class="n">original_exception</span><span class="o">=</span><span class="n">e</span><span class="p">,</span>
         <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>

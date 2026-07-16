@@ -1181,7 +1181,10 @@ optimization.</p>
 <span class="normal">121</span>
 <span class="normal">122</span>
 <span class="normal">123</span>
-<span class="normal">124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compute_data</span><span class="p">(</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compute_data</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">input_data</span><span class="p">:</span> <span class="n">DualProgramInput</span><span class="p">,</span>
     <span class="n">update_func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1196,11 +1199,14 @@ optimization.</p>
 <span class="sd">        propagate_wfn: Whether to propagate the wavefunction between steps of the</span>
 <span class="sd">            optimization.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># geomeTRIC setup mutates keywords (for example by removing constraints), so</span>
+    <span class="c1"># operate on an internal copy and preserve the caller&#39;s original input object.</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">model_copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
     <span class="c1"># Update the input object based on its calctype</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_update_input_data</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
     <span class="n">geometric_molecule</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_geometric_molecule</span><span class="p">(</span><span class="n">input_data</span><span class="o">.</span><span class="n">structure</span><span class="p">)</span>
     <span class="n">internal_coords_sys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_coords</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">geometric_molecule</span><span class="p">)</span>
-
     <span class="n">qcdata_adapter</span> <span class="o">=</span> <span class="n">get_adapter</span><span class="p">(</span>
         <span class="n">input_data</span><span class="o">.</span><span class="n">subprogram</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="n">qcng_fallback</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
