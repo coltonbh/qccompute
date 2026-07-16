@@ -949,7 +949,7 @@
 
 
 <h2 id="qccompute.adapters.crest.CRESTAdapter" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">qccompute.adapters.crest.CRESTAdapter</span>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>qccompute.adapters.crest.CRESTAdapter</code>
 
 
 <a href="#qccompute.adapters.crest.CRESTAdapter" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -1001,8 +1001,7 @@ still valid because they are translationally invariant.</p>
 
 
 <h3 id="qccompute.adapters.crest.CRESTAdapter.supported_calctypes" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">supported_calctypes</span>
-
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">supported_calctypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">CalcType</span><span class="o">.</span><span class="n">energy</span><span class="p">,</span> <span class="n">CalcType</span><span class="o">.</span><span class="n">gradient</span><span class="p">,</span> <span class="n">CalcType</span><span class="o">.</span><span class="n">hessian</span><span class="p">,</span> <span class="n">CalcType</span><span class="o">.</span><span class="n">optimization</span><span class="p">,</span> <span class="n">CalcType</span><span class="o">.</span><span class="n">conformer_search</span><span class="p">]</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
@@ -1010,8 +1009,7 @@ still valid because they are translationally invariant.</p>
   </span>
 
 <a href="#qccompute.adapters.crest.CRESTAdapter.supported_calctypes" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="n">supported_calctypes</span> <span class="o">=</span> <span class="p">[</span><span class="n"><span title="qcdata.CalcType.energy">energy</span></span><span class="p">,</span> <span class="n"><span title="qcdata.CalcType.gradient">gradient</span></span><span class="p">,</span> <span class="n"><span title="qcdata.CalcType.hessian">hessian</span></span><span class="p">,</span> <span class="n"><span title="qcdata.CalcType.optimization">optimization</span></span><span class="p">,</span> <span class="n"><span title="qcdata.CalcType.conformer_search">conformer_search</span></span><span class="p">]</span>
-</code></pre></div>
+
 
     <div class="doc doc-contents ">
 
@@ -1026,12 +1024,10 @@ still valid because they are translationally invariant.</p>
 
 
 <h3 id="qccompute.adapters.crest.CRESTAdapter.program_version" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">program_version</span>
-
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">program_version</span><span class="p">(</span><span class="n">stdout</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span></code>
 
 <a href="#qccompute.adapters.crest.CRESTAdapter.program_version" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">program_version</span><span class="p">(</span><span class="n">stdout</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="str">str</span></span>
-</code></pre></div>
+
 
     <div class="doc doc-contents ">
 
@@ -1124,12 +1120,10 @@ still valid because they are translationally invariant.</p>
 
 
 <h3 id="qccompute.adapters.crest.CRESTAdapter.compute_data" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">compute_data</span>
-
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">compute_data</span><span class="p">(</span><span class="n">input_data</span><span class="p">:</span> <span class="n">ProgramInput</span><span class="p">,</span> <span class="n">update_func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">update_interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">collect_rotamers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">SinglePointData</span> <span class="o">|</span> <span class="n">OptimizationResults</span> <span class="o">|</span> <span class="n">ConformerSearchResults</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span></code>
 
 <a href="#qccompute.adapters.crest.CRESTAdapter.compute_data" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">compute_data</span><span class="p">(</span><span class="n">input_data</span><span class="p">:</span> <span class="n"><span title="qcdata.ProgramInput">ProgramInput</span></span><span class="p">,</span> <span class="n">update_func</span><span class="p">:</span> <span class="n"><span title="collections.abc.Callable">Callable</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">update_interval</span><span class="p">:</span> <span class="n"><span title="float">float</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">collect_rotamers</span><span class="p">:</span> <span class="n"><span title="bool">bool</span></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="tuple">tuple</span></span><span class="p">[</span><span class="n"><span title="qcdata.SinglePointData">SinglePointData</span></span> <span class="o">|</span> <span class="n"><span title="qcdata.OptimizationResults">OptimizationResults</span></span> <span class="o">|</span> <span class="n"><span title="qcdata.ConformerSearchResults">ConformerSearchResults</span></span><span class="p">,</span> <span class="n"><span title="str">str</span></span><span class="p">]</span>
-</code></pre></div>
+
 
     <div class="doc doc-contents ">
 
